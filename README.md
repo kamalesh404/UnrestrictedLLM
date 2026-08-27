@@ -44,6 +44,18 @@ unrestricted serve --model dolphin-2.2.1-mistral-7b --port 8080
 
 ## Available Models
 
+### 🧑‍💻 Best Coding Models (for 4GB VRAM)
+
+| Model | Size | Description |
+|-------|------|-------------|
+| **qwen2.5-coder-7b** ⭐ | 4.7GB | Best coding model that fits 4GB. Top-tier code gen |
+| **qwen2.5-coder-7b-q3** | 3.7GB | Fully fits 4GB VRAM, slightly lower quality |
+| **qwen2.5-coder-3b** | 2.0GB | Tiny & fast, surprisingly capable |
+| **deepseek-coder-6.7b** | 4.1GB | Excellent code generation and completion |
+| **codellama-7b** | 4.1GB | Meta's reliable coding model |
+
+### 🧠 General Uncensored Models
+
 | Model | Size | Description | Backend |
 |-------|------|-------------|---------|
 | **dolphin-2.2.1-mistral-7b** | 4.4GB | Fully uncensored, no alignment | llama.cpp |
