@@ -1,0 +1,78 @@
+"""Curated list of uncensored and unrestricted open-source LLMs."""
+
+from .registry import ModelEntry
+
+UNCENSORED_MODELS = [
+    ModelEntry(
+        name="mistral-7b-instruct",
+        repo_id="TheBloke/Mistral-7B-Instruct-v0.2-GGUF",
+        filename="mistral-7b-instruct-v0.2.Q4_K_M.gguf",
+        size_gb=4.37, quantization="Q4_K_M", backend="llama_cpp",
+        description="Mistral 7B Instruct — fast, capable, uncensored fine-tune",
+        context_length=32768, license="Apache-2.0",
+        tags=["7b", "instruct", "fast", "general"],
+    ),
+    ModelEntry(
+        name="openhermes-7b",
+        repo_id="TheBloke/OpenHermes-2.5-Mistral-7B-GGUF",
+        filename="openhermes-2.5-mistral-7b.Q4_K_M.gguf",
+        size_gb=4.37, quantization="Q4_K_M", backend="llama_cpp",
+        description="OpenHermes 2.5 — uncensored, excellent for coding and reasoning",
+        context_length=8192, license="OpenRAIL-M",
+        tags=["7b", "coding", "reasoning", "uncensored"],
+    ),
+    ModelEntry(
+        name="dolphin-2.2.1-mistral-7b",
+        repo_id="TheBloke/dolphin-2.2.1-mistral-7B-GGUF",
+        filename="dolphin-2.2.1-mistral-7b.Q4_K_M.gguf",
+        size_gb=4.37, quantization="Q4_K_M", backend="llama_cpp",
+        description="Dolphin 2.2.1 — explicitly uncensored, no alignment",
+        context_length=8192, license="MIT",
+        tags=["7b", "uncensored", "unfiltered", "general"],
+    ),
+    ModelEntry(
+        name="neural-chat-7b",
+        repo_id="TheBloke/neural-chat-7B-v3.1-GGUF",
+        filename="neural-chat-7b-v3.1.Q4_K_M.gguf",
+        size_gb=4.37, quantization="Q4_K_M", backend="llama_cpp",
+        description="Intel Neural Chat 7B — conversational, capable, less restrictive",
+        context_length=8192, license="Apache-2.0",
+        tags=["7b", "chat", "conversational"],
+    ),
+    ModelEntry(
+        name="airoboros-mistral-7b",
+        repo_id="TheBloke/Airoboros-Mistral-7B-GGUF",
+        filename="airoboros-mistral-7b.Q4_K_M.gguf",
+        size_gb=4.37, quantization="Q4_K_M", backend="llama_cpp",
+        description="Airoboros — uncensored, roleplay and creative writing focused",
+        context_length=8192, license="MIT",
+        tags=["7b", "roleplay", "creative", "uncensored"],
+    ),
+    ModelEntry(
+        name="zephyr-7b-beta",
+        repo_id="TheBloke/zephyr-7B-beta-GGUF",
+        filename="zephyr-7b-beta.Q4_K_M.gguf",
+        size_gb=4.37, quantization="Q4_K_M", backend="llama_cpp",
+        description="Zephyr 7B Beta — aligned but highly capable, good general purpose",
+        context_length=8192, license="MIT",
+        tags=["7b", "general", "aligned"],
+    ),
+    ModelEntry(
+        name="llama-3-8b-instruct",
+        repo_id="QuantFactory/Meta-Llama-3-8B-Instruct-GGUF",
+        filename="Meta-Llama-3-8B-Instruct.Q4_K_M.gguf",
+        size_gb=4.92, quantization="Q4_K_M", backend="llama_cpp",
+        description="Llama 3 8B Instruct — Meta's latest, highly capable",
+        context_length=8192, license="Meta-Llama-3",
+        tags=["8b", "instruct", "latest", "general"],
+    ),
+    ModelEntry(
+        name="solar-10.7b-instruct",
+        repo_id="TheBloke/Solar-10.7B-Instruct-v1.0-GGUF",
+        filename="solar-10.7b-instruct-v1.0.Q4_K_M.gguf",
+        size_gb=6.46, quantization="Q4_K_M", backend="llama_cpp",
+        description="Solar 10.7B — Korean-made, excellent multilingual, less censored",
+        context_length=4096, license="Apache-2.0",
+        tags=["10b", "multilingual", "capable"],
+    ),
+]
