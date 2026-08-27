@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unrestrictedllm"
+version = "0.1.0"
+description = "Run uncensored open-source LLMs locally or on cloud"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Kamalesh"}]
+
+[project.optional-dependencies]
+llama_cpp = ["llama-cpp-python>=0.2"]
+transformers = ["transformers>=4.30", "torch>=2.0"]
+cloud = ["modal", "runpod"]
+ui = ["gradio>=3.40"]
+dev = ["pytest>=7.0", "ruff", "mypy"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
+
+[tool.mypy]
+python_version = "3.9"
+strict = false
+ignore_missing_imports = true
