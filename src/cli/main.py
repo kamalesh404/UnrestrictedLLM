@@ -143,5 +143,40 @@ def info(ctx, name):
     click.echo(f"Tags:        {', '.join(model.tags)}")
 
 
+@cli.command("templates")
+@click.pass_context
+def list_templates(ctx):
+    """List built-in prompt templates."""
+    from ..utils.templates import TemplateManager
+    mgr = TemplateManager()
+    for name in mgr.list_templates():
+        t = mgr.get(name)
+        click.echo(f"{name:15s} - {t.description} (vars: {', '.join(t.variables)})")
+
+
+@cli.command()
+@click.argument("name")
+@click.option("--var", "-V", "vars_", multiple=True, help="Template variable as key=value")
+@click.pass_context
+def prompt(ctx, name, vars_):
+    """Render a prompt template without loading a model."""
+    from ..utils.templates import TemplateManager
+    kwargs = {}
+    for item in vars_:
+        if "=" not in item:
+            click.echo(f"Ignoring malformed --var {item!r}, expected key=value")
+            continue
+        key, value = item.split("=", 1)
+        kwargs[key.strip()] = value
+    mgr = TemplateManager()
+    try:
+        click.echo(mgr.render(name, **kwargs))
+    except KeyError:
+        click.echo(f"Unknown template: {name}")
+        click.echo("Available: " + ", ".join(mgr.list_templates()))
+    except ValueError as e:
+        click.echo(f"Error: {e}")
+
+
 if __name__ == "__main__":
     cli()
