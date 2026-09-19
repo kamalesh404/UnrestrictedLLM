@@ -58,3 +58,15 @@ python -m src.ui.app
 - **With GPU (recommended):** 6GB+ VRAM for 7B models
 - **Storage:** ~5GB per 7B model
 - **Works on:** Windows, macOS (M1/M2), Linux
+
+## Prompt Templates
+
+```bash
+# List built-in templates and their variables
+unrestricted templates
+
+# Render a template without loading a model
+unrestricted prompt code_review -V language=python -V code="print('hi')"
+unrestricted prompt explain_code -V language=javascript -V code="let x = 1;"
+unrestricted prompt refactor -V language=python -V code="x=1" -V style="functional"
+```
